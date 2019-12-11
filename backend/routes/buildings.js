@@ -3,11 +3,11 @@ const {
     Create, 
     // GetCover,
     // GetAdminMain,
-    // GetBuildings,
+    GetBuildings,
     // GetContacts,
     // GetNewBuilding,
     // PostNewBuilding,
-    // get1Building,
+    GetBuilding,
     // get1BuildingContacts,
     // get1BuildingPayments,
     // GetUserMain,
@@ -22,6 +22,8 @@ const {
 
 // pagina de portada
 router.post('/', Create)
+router.get('/', GetBuildings)
+router.get('/:id',GetBuilding)
 
 /////////////////////
 //del adminisrtador
