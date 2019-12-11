@@ -1,6 +1,5 @@
 const { model, Schema} = require ("mongoose")
 
-
 const buildingSchema = new Schema(
 {
   clave_edificio: {
@@ -17,8 +16,5 @@ const buildingSchema = new Schema(
   }
 );
     
-    module.exports = model("Building", buildingSchema);
-
-
-
+module.exports = model("Building", buildingSchema);
 

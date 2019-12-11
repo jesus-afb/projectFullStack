@@ -30,7 +30,7 @@ const userSchema = new Schema(
     },
 
     id_building:{ 
-      type: mongoose.Schema.Types.ObjectId, 
+      type: Schema.Types.ObjectId, 
       ref:'Building',
      // required: true
   }},

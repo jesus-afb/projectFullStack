@@ -26,14 +26,25 @@ exports.GetBuildings = async (req,res,next) => {
    console.log(allBuildings)
    res.json({status: 200, data:allBuildings}) 
 }
+// choca con getContacts
+// exports.GetBuilding = async (req,res,next) => {
+//     console.log(req.params)
+// //    const building = await Building.find({ _id: req.params.id})
+//     const building = await Building.findById(req.params.id)
+// console.log(building)
+//     res.json({status: 200, data:building}) 
+//  }
 
-exports.GetBuilding = async (req,res,next) => {
-    console.log(req.params)
-//    const building = await Building.find({ _id: req.params.id})
-    const building = await Building.findById(req.params.id)
-console.log(building)
-    res.json({status: 200, data:building}) 
- }
+     //--->funciona, choca con getbuilding
+exports.GetContacts = async (req,res,next) => {
+        try{
+            const allUsers = await User.find()
+            console.log( allUsers)
+            res.json({status: 200, data:allUsers}) 
+        }catch(e) {
+            console.error(e)
+            res.status(400).json({msg: 'error'})
+    }}
 
 
 exports.PostNewUser = async (req, res, next) => {
@@ -75,23 +86,28 @@ exports.PostNewUser = async (req, res, next) => {
         res.status(400).json({msg: 'error'})
     }}
 
-     //--->FALLA
-    exports.GetContacts = async (req,res,next) => {
-        try{
-            console.log("entro")
-            const allUsers = await User.find({})
-            console.log(allUsers)
-            res.json({status: 200, data:allUsers}) 
-        }catch(e) {
+    exports.GetBuildingContacts = async (req, res, next) => {
+        try {
+            let {
+                id_building
+                    } = req.params
+    
+            console.log ("el id building :" + id_building)
+    
+            const buildingcontacts = await User.find({ id_building})
+            res.status(200).json({buildingcontacts})
+        } catch(e) {
             console.error(e)
             res.status(400).json({msg: 'error'})
-    }}
+        }
+        }
+
 
 //falta probar en postman -->falla
 
 // exports.GetBuildingContacts = async (req,res,next) => {
 //     try{
-//         const buildingcontacts = await User.find(params.id_building)
+//         const buildingcontacts = await User.find(req.params.id_building)
 //         console.log(buildingcontacts)
 //         res.json({status: 200, data:buildingcontacts}) 
 //     }catch(e) {
@@ -100,66 +116,34 @@ exports.PostNewUser = async (req, res, next) => {
 //     }}
 
 
-//falta probar en postman -->falla , id-building vacio
-exports.GetBuildingContacts = async (req, res, next) => {
-    try {
-        let {
-            id_building
-                } = req.body
 
-        console.log ("el id building" + id_building)
 
-        const buildingcontacts = await User.find({ id_building}, req.body.password)
-        res.status(200).json({buildingcontacts})
-    } catch(e) {
-        console.error(e)
-        res.status(400).json({msg: 'error'})
-    }
-    }
 
 
 
  
-    // exports.GetUser = async (req, res, next) => {
-    //     try {
-    //         let {
-    //             address,
-    //             email,
-    //             name,
-    //             clave_edificio,
-    //             phone,
-    //             administrator,
-    //             id_building
-    //              } = req.body
-    
-    //         console.log (id_building, 
-    //         administrator,
-    //         phone,
-    //         clave_edificio,
-    //         name,
-    //         email,
-    //         address)
-    
-    //         const user = await User.findById({id: user.id})
-    //         res.status(200).json({user})
-    //     } catch(e) {
-    //         console.error(e)
-    //         res.status(400).json({msg: 'error'})
-    //     }
-    //   
 
 
-// exports.createEventPost = async (req, res) => {
-//     const { _id } = req.user;
-//     console.log(req.body)
-//     await Event.create({ ...req.body, author: _id });
-//     res.redirect("/profile");
-//
 
-// exports.GetCover = async (req, res, next) => {
-//     // Modelcreate(req.body()).then =>
-//     res.json({status: "Es la portada principal"})
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // /////////////////
 // // Administrador
