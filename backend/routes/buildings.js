@@ -4,42 +4,41 @@ const {
     // GetCover,
     // GetAdminMain,
     GetBuildings,
-    // GetContacts,
+    GetContacts,
     // GetNewBuilding,
     // PostNewBuilding,
     GetBuilding,
-    // get1BuildingContacts,
+    GetBuildingContacts,
     // get1BuildingPayments,
     // GetUserMain,
-    // getUser,
-    // PostNewUser,
-    // GetNewUser,
+    GetUser,
+    PostNewUser,
     // getUserPayments,
     // GetNewPayment,
     // PostNewPayment
 } = require('../controllers/buildings.controllers');
 
 
-// pagina de portada
+// completas
 router.post('/', Create)
 router.get('/', GetBuildings)
 router.get('/:id',GetBuilding)
+router.post('/newuser',PostNewUser)
+router.get('/users/:id',GetUser )
+router.get('/:id_building/users',GetBuildingContacts) //regresa vacio
+router.get('/users',GetContacts) // falla
+
+
 
 /////////////////////
 //del adminisrtador
 ////////////////////
-// router.get( '/A', (req, res, next) => {
-//     res.status(200).json({msg: 'todo chido'});
-// });
 
 // router.get ('/A/main',GetAdminMain)  // lo hace el front
-// router.get ('/A/edificios', GetBuildings)
-// router.get ('/A/agenda',GetContacts)
 // router.get ('/A/newbuilding',GetNewBuilding)  //formulario => es del front
-// router.post ('/A/newbuilding',PostNewBuilding)  //POST
 
 // // de un edifcio
-// router.get ('/A/edificios/:id_building',get1Building)
+
 // router.get ('/A/edificios/:id_building/:id_inquilinos',get1BuildingContacts)
 // router.get ('/A/edificios/:id_building/pagos',get1BuildingPayments)
 

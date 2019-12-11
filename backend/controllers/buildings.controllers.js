@@ -1,5 +1,7 @@
 let Building = require('../models/Building.model')
+let User = require('../models/User')
 
+//probadas
 
 exports.Create = async (req, res, next) => {
     try {
@@ -33,16 +35,126 @@ console.log(building)
     res.json({status: 200, data:building}) 
  }
 
+
+exports.PostNewUser = async (req, res, next) => {
+    try {
+        let {
+            address,
+            email,
+            name,
+            clave_edificio,
+            phone,
+            administrator,
+            id_building
+             } = req.body
+
+        console.log (id_building, 
+        administrator,
+        phone,
+        clave_edificio,
+        name,
+        email,
+        address)
+
+        const newUser = await User.register({ address, email, name, clave_edificio, phone, administrator,id_building}, req.body.password)
+        res.status(200).json({newUser})
+    } catch(e) {
+        console.error(e)
+        res.status(400).json({msg: 'error'})
+    }
+    }
+
+    exports.GetUser = async (req,res,next) => {
+        try{
+    const user = await User.findById(req.params.id)
+    console.log("lo de params.id: "+ req.params.id)
+     console.log("lo de user:" + user)
+     res.json({status: 200, data:user}) 
+    }catch(e) {
+        console.error(e)
+        res.status(400).json({msg: 'error'})
+    }}
+
+     //--->FALLA
+    exports.GetContacts = async (req,res,next) => {
+        try{
+            console.log("entro")
+            const allUsers = await User.find({})
+            console.log(allUsers)
+            res.json({status: 200, data:allUsers}) 
+        }catch(e) {
+            console.error(e)
+            res.status(400).json({msg: 'error'})
+    }}
+
+//falta probar en postman -->falla
+
+// exports.GetBuildingContacts = async (req,res,next) => {
+//     try{
+//         const buildingcontacts = await User.find(params.id_building)
+//         console.log(buildingcontacts)
+//         res.json({status: 200, data:buildingcontacts}) 
+//     }catch(e) {
+//         console.error(e)
+//         res.status(400).json({msg: 'error'})
+//     }}
+
+
+//falta probar en postman -->falla , id-building vacio
+exports.GetBuildingContacts = async (req, res, next) => {
+    try {
+        let {
+            id_building
+                } = req.body
+
+        console.log ("el id building" + id_building)
+
+        const buildingcontacts = await User.find({ id_building}, req.body.password)
+        res.status(200).json({buildingcontacts})
+    } catch(e) {
+        console.error(e)
+        res.status(400).json({msg: 'error'})
+    }
+    }
+
+
+
+ 
+    // exports.GetUser = async (req, res, next) => {
+    //     try {
+    //         let {
+    //             address,
+    //             email,
+    //             name,
+    //             clave_edificio,
+    //             phone,
+    //             administrator,
+    //             id_building
+    //              } = req.body
+    
+    //         console.log (id_building, 
+    //         administrator,
+    //         phone,
+    //         clave_edificio,
+    //         name,
+    //         email,
+    //         address)
+    
+    //         const user = await User.findById({id: user.id})
+    //         res.status(200).json({user})
+    //     } catch(e) {
+    //         console.error(e)
+    //         res.status(400).json({msg: 'error'})
+    //     }
+    //   
+
+
 // exports.createEventPost = async (req, res) => {
 //     const { _id } = req.user;
 //     console.log(req.body)
 //     await Event.create({ ...req.body, author: _id });
 //     res.redirect("/profile");
-// }
-
-
-
-
+//
 
 // exports.GetCover = async (req, res, next) => {
 //     // Modelcreate(req.body()).then =>
