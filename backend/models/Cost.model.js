@@ -1,16 +1,12 @@
 const { model, Schema } = require("mongoose");
 
-const paymentSchema = new Schema(
+const CostSchema = new Schema(
   {
-    id_payment: {  //duda se outogenera ?
+    id_Cost: {  //duda se outogenera ?
     },
     id_building: {
         type: Schema.Types.ObjectId,
         ref: "Building" 
-    },
-    id_user: {
-        type: Schema.Types.ObjectId,
-        ref: "User" 
     },
     building_code:{
         type: String,
@@ -18,13 +14,13 @@ const paymentSchema = new Schema(
     },
     servicio_pagado:{
         type: string,
-        enum: ["mantenimiento", "pago extraordinario", "servicios", "luz", "gas", "otro" ]
+        enum: ["vigilancia", "mantenimiento mecánico", "pago extraordinario", "limpieza", "servicio eléctrico", "servicio de gas", "otros costos" ]
     },
     monto_pagado:{
         type: Number,
         required: true
     },
-    payment_details:{
+    cost_details:{
         type: string
     },
     execution_date:{
@@ -37,6 +33,4 @@ const paymentSchema = new Schema(
         versionKey: false  // 
       })
     
-      module.exports = model("Favor", favorSchema);    
-    
- 
+      module.exports = model("Favor", favorSchema);
