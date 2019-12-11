@@ -50,6 +50,6 @@ const buildingsRoutes = require('./routes/buildings')
 app.use('/edificios', buildingsRoutes);
 
 // Uncomment this line for production
-// app.get('/*', (req, res) => res.sendFile(__dirname + '/public/index.html'));
+  // app.get('/*', (req, res) => res.sendFile(__dirname + '/public/index.html'));
 
 module.exports = app;
