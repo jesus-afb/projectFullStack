@@ -2,8 +2,7 @@ const { model, Schema } = require("mongoose");
 
 const paymentSchema = new Schema(
   {
-    id_payment: {  //duda se outogenera ?
-    },
+
     id_building: {
         type: Schema.Types.ObjectId,
         ref: "Building" 
@@ -12,31 +11,32 @@ const paymentSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: "User" 
     },
-    building_code:{
+    clave_edificio:{  
         type: String,
-        required: true
+    //    required: true
     },
     servicio_pagado:{
-        type: string,
+        type: String,
         enum: ["mantenimiento", "pago extraordinario", "servicios", "luz", "gas", "otro" ]
     },
     monto_pagado:{
         type: Number,
-        required: true
+    //    required: true
     },
     payment_details:{
-        type: string
+        type: String
     },
     execution_date:{
-        type: Date,
-        required: true
-    },
-
-    {
+          type: String,
+     //   type: Date,
+    //    required: true
+    }
+}, {
         timestamps: true,
         versionKey: false  // 
-      })
+      }
+      );
     
-      module.exports = model("Favor", favorSchema);    
+      module.exports = model("Payment", paymentSchema);    
     
  

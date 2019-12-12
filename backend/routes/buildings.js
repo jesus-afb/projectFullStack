@@ -3,28 +3,30 @@ const {
     Create, 
     GetBuildings,
     GetContacts,
-    // GetNewBuilding,
+    
     // PostNewBuilding,
     GetBuilding,
     GetBuildingContacts,
-    // get1BuildingPayments,
-    // GetUserMain,
+    GetBuildingPayments,
     GetUser,
     PostNewUser,
-    // getUserPayments,
-    // GetNewPayment,
-    // PostNewPayment
+    GetUserPayments,
+    PostNewPayment
 } = require('../controllers/buildings.controllers');
 
 
 // completas
-router.post('/', Create)
+router.post('/', Create) // new building
 router.get('/', GetBuildings)
-// router.get('/:id',GetBuilding)
+router.get('/1building/:id',GetBuilding) 
 router.post('/newuser',PostNewUser)
 router.get('/users/:id',GetUser )
-router.get('/:id_building/users',GetBuildingContacts) 
-router.get('/users', GetContacts) //funciona pero choca
+router.get('/users_b/:id_building',GetBuildingContacts) 
+router.get('/users_all', GetContacts) 
+router.post('/users/:id/newpayment', PostNewPayment)
+router.get('/allpayments_b/:id_building',GetBuildingPayments)
+router.get('/allpayments_1u/:id_user',GetUserPayments)
+
 
 module.exports = router;
 

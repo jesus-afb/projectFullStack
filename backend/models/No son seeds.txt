@@ -1,0 +1,85 @@
+/////////////////
+edificios
+////////////////
+###########
+"clave_edificio":"TON-001",
+{"_id":{"$oid":"5df073c026813a1d41bf70e6"},
+"direccion":"tonala 10,  colonia napoles,  cp 12345"
+###########
+"clave_edificio":"INS-002",
+{"_id":{"$oid":"5df074be8ca5791fe5773c32"},
+"direccion":"insurgentes 002, colonia napoles, cp 12345"
+
+
+/////////////////
+usuarios
+////////////////
+
+"name":"Juan Perez III",
+{"_id":{"$oid":"5df1212d42c1b1624eddfe42"}
+"clave_edificio":"INS-002",
+,"administrator":false,
+"address":"insurgentes 002, colonia napoles, cp 12345",
+"email":"3iun@mail.com",
+"phone":"55 123 456 78",
+"id_building":{"$oid":"5df074be8ca5791fe5773c32"},
+###########
+
+
+"name":"Juan Perez II",
+{"_id":{"$oid":"5df25ddcd6cf12191a783949"},
+"clave_edificio":"INS-002",
+"administrator":false,
+"address":"insurgentes 002, colonia napoles, cp 12345",
+"email":"2iun@mail.com",
+"phone":"55 123 456 78",
+"id_building":{"$oid":"5df074be8ca5791fe5773c32"},
+###########
+
+
+"name":"Juan Perez I",
+{"_id":{"$oid":"5df25edad6cf12191a78394a"},
+"clave_edificio":"INS-002",
+"administrator":false,
+"address":"insurgentes 002, colonia napoles, cp 12345",
+"email":"1iun@mail.com",
+"phone":"55 123 456 78",
+"id_building":{"$oid":"5df074be8ca5791fe5773c32"},
+###########
+
+
+"name":"Maria Perez I",
+{"_id":{"$oid":"5df25f5fd6cf12191a78394b"},
+"clave_edificio":"TON-001",
+"administrator":false,
+"address":"tonala 10, colonia napoles, cp 12345",
+"email":"1tun@mail.com",
+"phone":"55 123 456 78",
+"id_building":{"$oid":"5df073c026813a1d41bf70e6"}
+###########
+
+"name":"Maria Perez II",
+{"_id":{"$oid":"5df25fa5d6cf12191a78394c"},
+"clave_edificio":"TON-001",
+"administrator":false,
+"address":"tonala 10, colonia napoles, cp 12345",
+"email":"2tun@mail.com",
+"phone":"55 123 456 78",
+"id_building":{"$oid":"5df073c026813a1d41bf70e6"}
+###############
+
+"name":"Maria Perez III",
+{"_id":{"$oid":"5df25fbed6cf12191a78394d"},
+"clave_edificio":"TON-001",
+"administrator":false,
+"address":"tonala 10, colonia napoles, cp 12345",
+"email":"3tun@mail.com",
+"phone":"55 123 456 78",
+"id_building":{"$oid":"5df073c026813a1d41bf70e6"},
+
+
+
+/////////////////
+PAGOS
+////////////////
+
