@@ -46,9 +46,10 @@ app.use(cookieParser());
 app.use(logger('dev'));
 
 const buildingsRoutes = require('./routes/buildings')
-
 app.use('/edificios', buildingsRoutes);
 
+const authRoutes = require('./routes/auth')
+app.use('/', authRoutes)
 // Uncomment this line for production
   // app.get('/*', (req, res) => res.sendFile(__dirname + '/public/index.html'));
 
