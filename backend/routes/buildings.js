@@ -33,24 +33,4 @@ module.exports = router;
 
 
 
-// // de un edifcio
 
-// router.get ('/A/edificios/:id_building/pagos',get1BuildingPayments)
-
-
-// /////////////////
-// //del inquilino
-// ///////////////
-
-// router.get ('/U/:id/misdatos',getUser) 
-// router.get ('/U/:id/pagos',getUserPayments)
-// router.post ('/U/:id/newpayment',PostNewPayment) //POST
-
-////////////////////
-//DEl FRONT
-
-// router.get ('/A/main',GetAdminMain)  // lo hace el front
-// router.get ('/A/newbuilding',GetNewBuilding)  //formulario => es del front
-// router.get ('/U/:id/newpayment',GetNewPayment)  // lo hace el front (quizas si no necesita user id)
-// router.get ('/signup',GetNewUser)  // lo hace el front
-// router.get ('/U/main',GetUserMain) // lo hace el front
