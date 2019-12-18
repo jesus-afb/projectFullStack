@@ -18,14 +18,12 @@ class MyProvider extends Component {
       password: ''
     },
     user: {},
-    projects: [],
+    projects:[],
     
   }
 
   async componentDidMount () {
     if (document.cookie) {
-      
-
       AUTH_SERVICE.getUser()
         .then (({ data }) => {
           this.setState({ loggedUser: true, user: data.user })
@@ -33,6 +31,7 @@ class MyProvider extends Component {
         })
         .catch(err => console.log(err))
     }
+    this.handlegetprojects()
   }
 
   handleInput = (e, obj) => {
@@ -68,8 +67,9 @@ class MyProvider extends Component {
   }
   handlegetprojects = async () =>{
    const {data} = await BuildingService.getbuildings()
+   this.setState({ projects: data.allBuildings })
+   console.log(this.state.projects)
    return data
-  //  this.setState({ projects:data.buildings }) 
   }
 
 

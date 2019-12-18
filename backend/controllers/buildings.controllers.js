@@ -25,7 +25,7 @@ exports.Create = async (req, res, next) => {
 exports.GetBuildings = async (req,res,next) => {
    const allBuildings = await Building.find()
    console.log(allBuildings)
-   res.json({status: 200, data:allBuildings}) 
+   res.status(200).json({allBuildings}) 
 }
 
 exports.GetBuilding = async (req,res,next) => {

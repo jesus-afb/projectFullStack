@@ -1,9 +1,6 @@
 import React from "react";
 import { Card } from 'antd'
-//import { Form, Input, Button, Select } from 'antd'
 //import DataService from '../../services/DataService';
-//import { FormAddProject }  from "../../components/styled-components/components"
-//import DataService from '../../services/DataService'
 import 'bootstrap/dist/css/bootstrap.css'
 import { MyContext } from '../../context'
 const { Meta } = Card
@@ -20,9 +17,9 @@ export default function GetProjects(props) {
                      <Card
                      hoverable
                      style={{ width: 240 }}
-                     cover={<img alt="photoProfile" src={project.photoURL} key={i}/>}
+                     
                  >
-                     <Meta title={project.title} description={project.description} key={i}/>
+                     <Meta title={project.name} description={project.direccion} key={i}/>
                  </Card>
                      ) 
                     })}

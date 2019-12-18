@@ -18,24 +18,23 @@ export default function UserData(props) {
                     <Card
                         hoverable
                         style={{ width: 240 }}
-                        // cover={<img alt="photoProfile" src={context.user.photoURL} />}
-                    >
+                                          >
                         <Meta title={context.user.name} description={context.user.email} />
                         <div className="boton-crear">
                             <Link to={"/createProject"}>
-                                <button type="submit" className="btn btn-primary color = green" >Crear un edificio</button>
+                                <button type="submit" className="btn btn-primary " >Crear un edificio</button>
                             </Link>
                         </div>
                     </Card>
                     <Card
                         hoverable
                         style={{ width: 240 }}
-                        // cover={<img alt="photoProfile" src={context.user.photoURL} />}
+                       
                     >
                         <Meta title={context.user.name} description={context.user.email} />
                         <div className="boton-crear">
                             <Link to={"/createProject"}>
-                                <button type="submit" className="btn btn-primary color= danger" >Registrar un Pago</button>
+                                <button type="submit" className="btn btn-primary " >Registrar un Pago</button>
                             </Link>
                         </div>
                     </Card>
