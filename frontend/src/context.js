@@ -68,7 +68,7 @@ class MyProvider extends Component {
   handlegetprojects = async () =>{
    const {data} = await BuildingService.getbuildings()
    this.setState({ projects: data.allBuildings })
-   console.log(this.state.projects)
+  //  console.log(this.state.projects)
    return data
   }
 

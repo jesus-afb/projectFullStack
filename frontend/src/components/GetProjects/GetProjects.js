@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from 'antd'
 //import DataService from '../../services/DataService';
 import 'bootstrap/dist/css/bootstrap.css'
-import { MyContext } from '../../context'
+import { MyContext } from './../../context'
 const { Meta } = Card
 
 export default function GetProjects(props) {
@@ -11,9 +11,10 @@ export default function GetProjects(props) {
         <MyContext.Consumer>
             {context => (
                 <div className="form">
+                    {console.log("mi context project" + context.handlegetprojects) }
+            
                     <h1>Mis Edificios</h1>
                     {context.projects.map((project, i) => {
-                    console.log("mi context project" + context.project)
                      return(
                      <Card
                      hoverable
