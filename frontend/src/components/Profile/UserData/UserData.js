@@ -11,19 +11,36 @@ export default function UserData(props) {
         <MyContext.Consumer>
             {context => (
                 <div className="col">
-                    <h1>Perfil</h1>
+                    <h1>Usuario</h1>
+
+
+
                     <Card
                         hoverable
                         style={{ width: 240 }}
-                        cover={<img alt="photoProfile" src={context.user.photoURL} />}
+                        // cover={<img alt="photoProfile" src={context.user.photoURL} />}
                     >
                         <Meta title={context.user.name} description={context.user.email} />
                         <div className="boton-crear">
                             <Link to={"/createProject"}>
-                                <button type="submit" className="btn btn-primary">Iniciar un proyecto</button>
+                                <button type="submit" className="btn btn-primary color = green" >Crear un edificio</button>
                             </Link>
                         </div>
                     </Card>
+                    <Card
+                        hoverable
+                        style={{ width: 240 }}
+                        // cover={<img alt="photoProfile" src={context.user.photoURL} />}
+                    >
+                        <Meta title={context.user.name} description={context.user.email} />
+                        <div className="boton-crear">
+                            <Link to={"/createProject"}>
+                                <button type="submit" className="btn btn-primary color= danger" >Registrar un Pago</button>
+                            </Link>
+                        </div>
+                    </Card>
+
+
                 </div>
             )}
         </MyContext.Consumer>

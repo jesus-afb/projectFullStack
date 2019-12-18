@@ -21,28 +21,28 @@ export default function CreateProject(props) {
                 }}
                 >
                     <Form.Item>
-                        <label for="exampleFormControlTextarea1">Nombre del Proyecto</label>
+                        <label for="exampleFormControlTextarea1">Nombre del Edificio</label>
                         <Input
-                            name="title"
-                            placeholder="Proyecto"
+                            name="clave_edificio"
+                            placeholder="clave del edificio"
                             type="text"
-                            value={context.projectForm.title}
+                            value= {context.projectForm.clave_edificio}
                             onChange={e => context.handleInput(e, 'projectForm')}
-                            required
+                            // required
                         />
                     </Form.Item>
 
                     <Form.Item>
-                        <label for="exampleFormControlTextarea1">Descripción</label>
+                        <label for="exampleFormControlTextarea1">Dirección</label>
                         <TextArea rows={4}
-                            name="description"
-                            value={context.projectForm.description}
+                            name="direccion"
+                            value={context.projectForm.direccion}
                             onChange={e => context.handleInput(e, 'projectForm')}
                             required
                         />
                     </Form.Item>
 
-                    <Form.Item label="Categoría" hasFeedback validateStatus="Success">
+                    {/* <Form.Item label="Categoría" hasFeedback validateStatus="Success">
                         <Select
                             defaultValue="Campaña Ecológica"
                             name="category"
@@ -57,7 +57,7 @@ export default function CreateProject(props) {
                             <Option value="Energías Limpias">Energías Limpias</Option>
                             <Option value="Rescate Animal">Rescate Animal</Option>
                         </Select>
-                    </Form.Item>
+                    </Form.Item> */}
 
                     <Form.Item>
                         <Button type="primary" htmlType="submit">

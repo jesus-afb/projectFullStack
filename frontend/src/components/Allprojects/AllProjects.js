@@ -13,7 +13,7 @@ export default function AllProjects(props) {
         <MyContext.Consumer>
             {context => (
                 <div className="form">
-                    <h1>Proyectos disponibles</h1>
+                    <h1>Edificios Existentes</h1>
                     {context.allProjects.map((project, i) => {
                      return(
                      <Card

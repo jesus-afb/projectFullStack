@@ -9,7 +9,7 @@ export default function SignupContainer(props) {
         <Form
           onSubmit={e => {
             context.handleSignup(e)
-            // props.history.push('/login')
+             props.history.push('/login')
           }}
         >
           <Form.Item>

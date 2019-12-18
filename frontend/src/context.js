@@ -19,6 +19,7 @@ class MyProvider extends Component {
     },
     user: {},
     projects: [],
+    
   }
 
   async componentDidMount () {
