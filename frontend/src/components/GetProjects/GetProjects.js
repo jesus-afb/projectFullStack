@@ -9,11 +9,12 @@ import { MyContext } from '../../context'
 const { Meta } = Card
 
 export default function GetProjects(props) {
-    return (
+   
+    return (  
         <MyContext.Consumer>
             {context => (
                 <div className="form">
-                    <h1>Mis proyectos</h1>
+                    <h1>Mis Edificios</h1>
                     {context.projects.map((project, i) => {
                      return(
                      <Card

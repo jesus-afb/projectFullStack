@@ -26,7 +26,7 @@ exports.signup = (req, res, next) => {
         email,
         password: hashPass
     });
-(con contexte en front)
+//(con contexte en front)
     newUser
       .save()
       .then(() => {

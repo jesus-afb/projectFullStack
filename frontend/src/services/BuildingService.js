@@ -13,13 +13,13 @@ const BuildingService = {
         return building.get("/")
     },
     getUser: building => {
-        return user.post('/myUsers', building)
-    }
+        return building.post('/myUsers', building)
+    },
     allUsers: building => {
-        return user.post('/allUsers', building)
-    }
+        return building.post('/allUsers', building)
+    },
     logout: () => {
-        return project.get('/logout')
+        return building.get('/logout')
     }
 }
 

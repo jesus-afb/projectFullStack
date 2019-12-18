@@ -1,6 +1,7 @@
 import React, { Component, createContext } from 'react'
 import AUTH_SERVICE from './services/AuthService'
 import Swal from 'sweetalert2'
+import BuildingService from './services/BuildingService'
 
 export const MyContext = createContext()
 
@@ -16,13 +17,16 @@ class MyProvider extends Component {
       email: '',
       password: ''
     },
-    user: {}
+    user: {},
+    projects: [],
   }
 
-  componentDidMount() {
+  async componentDidMount () {
     if (document.cookie) {
+      
+
       AUTH_SERVICE.getUser()
-        .then(({ data }) => {
+        .then (({ data }) => {
           this.setState({ loggedUser: true, user: data.user })
           Swal.fire(`Welcome back ${data.user.name} `, '', 'success')
         })
@@ -61,19 +65,28 @@ class MyProvider extends Component {
     this.setState({ loggedUser: false, user: {} })
     cb()
   }
+  handlegetprojects = async () =>{
+   const {data} = await BuildingService.getbuildings()
+   return data
+  //  this.setState({ projects:data.buildings }) 
+  }
+
 
   render() {
     console.log(this.state)
     return (
       <MyContext.Provider
         value={{
+          handlegetprojects: this.handlegetprojects,
           loggedUser: this.state.loggedUser,
           formSignup: this.state.formSignup,
           loginForm: this.state.loginForm,
           handleInput: this.handleInput,
           handleSignup: this.handleSignup,
           handleLogin: this.handleLogin,
-          handleLogout: this.handleLogout
+          handleLogout: this.handleLogout,
+          user: {},
+          projects: []
         }}
       >
         {this.props.children}
