@@ -13,6 +13,7 @@ export default function GetProjects(props) {
                 <div className="form">
                     <h1>Mis Edificios</h1>
                     {context.projects.map((project, i) => {
+                    console.log("mi context project" + context.project)
                      return(
                      <Card
                      hoverable
