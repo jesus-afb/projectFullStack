@@ -40,8 +40,8 @@ console.log(building)
 exports.GetContacts = async (req,res,next) => {
         try{
             const allUsers = await User.find()
-            console.log( allUsers)
-            res.json({status: 200, data:allUsers}) 
+            console.log( allUsers )
+            res.status(200).json({ allUsers}) 
         }catch(e) {
             console.error(e)
             res.status(400).json({msg: 'error'})

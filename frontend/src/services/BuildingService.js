@@ -20,7 +20,7 @@ const BuildingService = {
         return building.post('/myUsers', building)
     },
     allUsers: building => {
-        return building.post('/allUsers', building)
+        return building.post('/users_all', building)
     },
     logout: () => {
         return building.get('/logout')
