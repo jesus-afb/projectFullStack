@@ -4,7 +4,7 @@ const {
     GetBuildings,
     GetContacts,
     
-    // PostNewBuilding,
+    GetAllPayments,
     GetBuilding,
     GetBuildingContacts,
     GetBuildingPayments,
@@ -26,7 +26,7 @@ router.get('/users_all', GetContacts)
 router.post('/users/:id/newpayment', PostNewPayment)
 router.get('/allpayments_b/:id_building',GetBuildingPayments)
 router.get('/allpayments_1u/:id_user',GetUserPayments)
-
+router.get('/allpayments',GetAllPayments) //nueva
 
 module.exports = router;
 
