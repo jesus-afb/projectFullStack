@@ -3,6 +3,9 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { MyContext } from '../../context'
 import UserData from './UserData/UserData'
 import GetProjects from '../GetProjects/GetProjects'
+import GetPayments from '../GetPayments/GetPayments'
+import GetUsers from '../GetUsers/GetUsers'
+
 
 export default function Profile(props) {
   return (
@@ -15,7 +18,10 @@ export default function Profile(props) {
             <GetProjects/>
             </div>
             <div className="col">
-              
+            <GetPayments/>
+            </div>
+            <div className="col">
+            <GetUsers/> 
             </div>
           </div>
         </div>

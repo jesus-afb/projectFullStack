@@ -28,10 +28,10 @@ class MyProvider extends Component {
         .then (({ data }) => {
           this.setState({ loggedUser: true, user: data.user })
           Swal.fire(`Welcome back ${data.user.name} `, '', 'success')
+          this.handlegetprojects()
         })
         .catch(err => console.log(err))
     }
-    this.handlegetprojects()
   }
 
   handleInput = (e, obj) => {
@@ -67,14 +67,15 @@ class MyProvider extends Component {
   }
   handlegetprojects = async () =>{
    const {data} = await BuildingService.getbuildings()
+   alert(0)
    this.setState({ projects: data.allBuildings })
-  //  console.log(this.state.projects)
+
    return data
   }
 
 
   render() {
-    // console.log(this.state)
+
     return (
       <MyContext.Provider
         value={{

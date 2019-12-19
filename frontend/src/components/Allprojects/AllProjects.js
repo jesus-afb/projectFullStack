@@ -1,12 +1,11 @@
 import React from "react";
 import { Card } from 'antd'
-//import { Form, Input, Button, Select } from 'antd'
-//import DataService from '../../services/DataService';
+
 import 'bootstrap/dist/css/bootstrap.css'
-//import DataService from '../../services/DataService'
+
 import { MyContext } from '../../context'
 const { Meta } = Card
-//import { FormAddProject }  from "../../components/styled-components/components"
+
 
 export default function AllProjects(props) {
     return (

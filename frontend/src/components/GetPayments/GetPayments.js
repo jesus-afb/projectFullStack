@@ -1,21 +1,22 @@
 import React , {Component} from "react";
 import { Card } from 'antd'
 import 'bootstrap/dist/css/bootstrap.css'
-import BuildingService from './../../services/BuildingService'
+import PaymentService from './../../services/PaymentService'
 
 
 const { Meta } = Card
 
-class GetProjects extends Component {
+class GetPayments extends Component {
     state ={
-        projects:[]
+        payments:[]
 }
     
    componentDidMount = async () => {
-         
-        const {data} = await BuildingService.getbuildings()
-        this.setState({ projects: data.allBuildings })
-        console.log(this.state.projects)
+          
+        const {data} = await PaymentService.getpayments()
+        console.log(data)
+        this.setState({ payments: data.allpayments })
+        console.log(this.state.payments)
        
   }  
     
@@ -24,22 +25,21 @@ class GetProjects extends Component {
     return (  
 
                 <div className="form">
-                   
-            
-                    <h1>Los Edificios</h1>
-                    {this.state.projects.map((project, i) => {
+
+                    <h1> Los Pagos</h1>
+                    {this.state.payments.map((payment, i) => {
                      return(
                      <Card
                      hoverable
                      style={{ width: 240 }}
                      
                  >
-                     <Meta title={project.name} description={project.direccion} key={i}/>
+                     <Meta title={payment.clave_edificio} description={payment.servicio_pagado} key={i}/>
                  </Card>
                      ) 
                     })}
                 </div>
-
+ 
     )}
 }
-export default GetProjects
+export default GetPayments
